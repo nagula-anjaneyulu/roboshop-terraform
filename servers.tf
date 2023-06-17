@@ -61,7 +61,8 @@ resource "aws_instance" "shipping" {
   tags = {
     Name = "shipping"
   }
-}resource "aws_instance" "rabbitmq" {
+}
+resource "aws_instance" "rabbitmq" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.micro"
 

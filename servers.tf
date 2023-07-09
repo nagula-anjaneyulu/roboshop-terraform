@@ -21,14 +21,7 @@ resource "aws_instance" "frontend" {
     Name = "frontend"
   }
 }
-resource "aws_instance" "mongodb" {
-  ami           = "ami-03265a0778a880afb"
-  instance_type = "var.instance_type"
-  vpc_security_group_ids =[data.aws_security_group.allow-all.id]
-  tags = {
-    Name = "mongodb"
-  }
-}
+
 resource "aws_route53_record" "frontend" {
   zone_id = "Z104560831NEF0T6OKT9Q"
   name    = "frontend-dev.anjidevops72.online"

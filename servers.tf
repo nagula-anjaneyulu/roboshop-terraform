@@ -13,13 +13,14 @@ variable "instance_type" {
 }
 
 resource "aws_instance" "frontend" {
-  ami           = "ami-03265a0778a880afb"
-  instance_type = "var.instance_type"
-  vpc_security_group_ids =[data.aws_security_group.allow-all.id]
+  ami                    = "ami-03265a0778a880afb"
+  instance_type          = "var.instance_type"
+  vpc_security_group_ids = [data.aws_security_group.allow-all.id]
 
   tags = {
     Name = "frontend"
   }
+}
 resource "aws_instance" "mongodb" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "var.instance_type"

@@ -9,7 +9,7 @@ data "aws_security_group" "allow-all" {
 }
 
 variable "instance_type" {
-  default=t3.small
+  default= "t3.micro"
 }
 
 resource "aws_instance" "frontend" {

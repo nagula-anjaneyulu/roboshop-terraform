@@ -1,5 +1,4 @@
 components = {
-
   default = {
     frontend = {
       name = "frontend"

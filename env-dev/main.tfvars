@@ -1,4 +1,4 @@
-variable "components" {
+components = {
   default = {
     frontend = {
       name = "frontend"

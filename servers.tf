@@ -1,5 +1,5 @@
 resource "aws_instance" "instance" {
-  for_each               = var.components
+  for_each               = { "component" = var.components }
   ami                    = data.aws_ami.centos.image_id
   instance_type          = each.value ["instance_type"]
   vpc_security_group_ids = [data.aws_security_group.allow-all.id]
@@ -10,7 +10,7 @@ resource "aws_instance" "instance" {
 }
 
  resource "aws_route53_record" "records" {
-   for_each = var.components
+   for_each = { "component" = var.components }
   zone_id = "Z104560831NEF0T6OKT9Q"
   name    = "${each.value["name"]}-dev.anjidevops72.online"
   type    = "A"

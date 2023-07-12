@@ -43,3 +43,5 @@ components = {
     }
   }
 }
+
+env = "prod"

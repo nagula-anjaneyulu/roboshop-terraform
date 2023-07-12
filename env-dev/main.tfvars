@@ -42,3 +42,5 @@ variable "components" {
     }
   }
 }
+
+env = "dev"

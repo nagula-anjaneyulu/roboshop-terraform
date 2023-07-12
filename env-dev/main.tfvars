@@ -1,5 +1,4 @@
 components = {
-  default = {
     frontend = {
       name = "frontend"
       instance_type = "t3.micro"

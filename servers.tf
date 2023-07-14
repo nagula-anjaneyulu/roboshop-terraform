@@ -25,7 +25,7 @@
         "sudo bash ${each.value["name"]}.sh"
       ]
   }
-
+  }
  resource "aws_route53_record" "records" {
    for_each = var.components
    zone_id = "Z104560831NEF0T6OKT9Q"

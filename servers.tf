@@ -8,6 +8,23 @@
     Name = each.value["name"]
   }
 }
+  provisioner "remote-exec" {
+
+  connection {
+    type     = "ssh"
+    user     = "centos"
+    password = "DevOps321"
+    host     = self.private_ip
+  }
+
+    inline = [
+      // i have list of commands
+       "rm -rf roboshop-shell",
+        "git clone https://github.com/nagula-anjaneyulu/roboshop-shell",
+        "cd roboshop-shell",
+        "sudo bash $each.value["name"].sh"
+      ]
+  }
 
  resource "aws_route53_record" "records" {
    for_each = var.components

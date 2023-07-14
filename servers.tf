@@ -15,7 +15,7 @@
     user     = "centos"
     password = "DevOps321"
     host     = self.private_ip
-  }
+
 
     inline = [
       // i have list of commands
@@ -24,7 +24,7 @@
         "cd roboshop-shell",
         "sudo bash ${each.value["name"]}.sh"
       ]
-  }
+    }
   }
  resource "aws_route53_record" "records" {
    for_each = var.components

@@ -8,7 +8,7 @@
     Name = each.value["name"]
   }
 }
- provisioner "remote-exec" {
+  echo "remote-exec" {
 
   connection {
     type     = "ssh"

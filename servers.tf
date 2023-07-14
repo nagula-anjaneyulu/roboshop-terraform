@@ -22,7 +22,7 @@
        "rm -rf roboshop-shell",
         "git clone https://github.com/nagula-anjaneyulu/roboshop-shell",
         "cd roboshop-shell",
-        "sudo bash $each.value["name"].sh"
+        "sudo bash ${each.value["name"]}.sh"
       ]
   }
 

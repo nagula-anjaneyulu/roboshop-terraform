@@ -18,7 +18,7 @@
        user     = "centos"
        password = "DevOps321"
        host     = "self.private_ip"
-
+     }
 
        inline = [
          // i have list of commands
@@ -29,7 +29,7 @@
        ]
      }
    }
- }
+
  resource "aws_route53_record" "records" {
    for_each = var.components
    zone_id = "Z104560831NEF0T6OKT9Q"

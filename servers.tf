@@ -9,8 +9,8 @@
   }
 }
  resource "null_resource" "provisioner" {
- depends_on = [aws_instance.instance, aws_route53_record.records]
-   for_each = var.components
+   depends_on = [aws_instance.instance, aws_route53_record.records]
+   for_each   = var.components
    provisioner "remote-exec" {
 
      connection {
@@ -20,13 +20,15 @@
        host     = aws_instance.instance[each.value["name"]].private_ip
      }
 
-       inline = [
-         // i have list of commands
-         "rm -rf roboshop-shell",
-         "git clone https://github.com/nagula-anjaneyulu/roboshop-shell",
-         "cd roboshop-shell",
-         "sudo bash ${each.value["name"]}.sh ${lookup(each.value,"password","null")}
-
+     inline = [
+       // i have list of commands
+       "rm -rf roboshop-shell",
+       "git clone https://github.com/nagula-anjaneyulu/roboshop-shell",
+       "cd roboshop-shell",
+       "sudo bash ${each.value["name"]}.sh ${lookup(each.value,"password","null")}
+     ]
+   }
+ }
  resource "aws_route53_record" "records" {
    for_each = var.components
    zone_id = "Z104560831NEF0T6OKT9Q"

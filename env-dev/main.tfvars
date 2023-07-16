@@ -10,21 +10,19 @@ components = {
     catalogue = {
       name = "catalogue"
       instance_type = "t3.micro"
-      password = "roboshop123"
     }
     redis = {
       name = "redis"
       instance_type = "t3.micro"
     }
     user = {
-      name = "user"
+      name          = "user"
       instance_type = "t3.micro"
-      password = "roboshop123"
     }
-    cart = {
+  cart = {
       name = "cart"
       instance_type = "t3.micro"
-      password = "roboshop123"
+
     }
     mysql = {
       name = "mysql"
@@ -33,7 +31,7 @@ components = {
     shipping = {
       name = "shipping"
       instance_type = "t3.micro"
-      password = "roboshop123"
+
     }
     rabbitmq = {
       name = "rabbitmq"
@@ -42,7 +40,7 @@ components = {
     payment = {
       name = "payment"
       instance_type = "t3.micro"
-      password = "roboshop123"
+
     }
   }
 

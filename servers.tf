@@ -17,7 +17,7 @@
        type     = "ssh"
        user     = "centos"
        password = "DevOps321"
-       host     = "aws_instance.instance[each.value["name"]].private_ip"
+       host     = aws_instance.instance[each.value["name"]].private_ip
      }
 
        inline = [
@@ -30,7 +30,7 @@
  resource "aws_route53_record" "records" {
    for_each = var.components
    zone_id = "Z104560831NEF0T6OKT9Q"
-  name    = "${each.value["name"]}-dev.anjidevops72.online"
+  name    = "${each.value["name"]}-devopsanji72.online"
   type    = "A"
   ttl     = 300
   records  = [aws_instance.instance[each.value["name"]].private_ip]

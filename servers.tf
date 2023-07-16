@@ -35,7 +35,7 @@
    zone_id = "Z104560831NEF0T6OKT9Q"
   name    = "${each.value["name"]}-dev.anjidevops72.online"
   type    = "A"
-  ttl     = 300
+  ttl     = 30
   records  = [aws_instance.instance[each.value["name"]].private_ip]
 }
 

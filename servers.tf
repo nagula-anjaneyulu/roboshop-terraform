@@ -1,8 +1,8 @@
 variable "components" {
-  default = ""
+  default = "var.components"
 }
 variable "env" {
-  default = ""
+  default = "var.env"
 }
 module "servers" {
   for_each = var.components
@@ -11,5 +11,5 @@ module "servers" {
   env               = var.env
   instance_type     = each.value["instance_type"]
   password          = lookup(each.value,"password","null")
-  components = ""
+  components = "var.components"
 }

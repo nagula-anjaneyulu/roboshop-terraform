@@ -1,6 +1,9 @@
 variable "components" {
   default = ""
 }
+variable "env" {
+  default = ""
+}
 module "servers" {
   for_each = var.components
   source   = "./module"

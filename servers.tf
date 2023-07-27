@@ -1,4 +1,4 @@
-variable "database-servers" {
+module "database-servers" {
   for_each = "var.database_servers"
   source   = "./module"
   component_name    = each.value["name"]

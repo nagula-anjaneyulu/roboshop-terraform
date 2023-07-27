@@ -34,7 +34,7 @@ app_servers = {
 
 env = "dev"
 
-database_servers {
+database_servers = {
   mysql = {
     name          = "mysql"
     instance_type = "t3.micro"
@@ -51,5 +51,4 @@ database_servers {
     name          = "redis"
     instance_type = "t3.micro"
   }
-
 }

@@ -32,7 +32,7 @@ resource "aws_route53_record" "records" {
   zone_id = "Z104560831NEF0T6OKT9Q"
   name    = "${var.component_name}-dev.anjidevops72.online"
   type    = "A"
-  ttl     = 300
+  ttl     = 30
   records  = [aws_instance.instance.private_ip]
 }
 
